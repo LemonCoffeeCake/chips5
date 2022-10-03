@@ -11,8 +11,7 @@ class Movie < ActiveRecord::Base
     out = self.where(rating: ratings_list)
     if out.present?
       return out
-    else
-      return self.none
     end
+    self.none
   end
 end
