@@ -12,7 +12,7 @@ class Movie < ActiveRecord::Base
     if out.present?
       return out
     else
-      return self.where(rating: "X")
+      return self.none
     end
   end
 end
