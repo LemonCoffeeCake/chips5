@@ -10,7 +10,7 @@ class MoviesController < ApplicationController
       debugger
       if params[:ratings] != nil
         ratings = params[:ratings].keys
-      elsif params.key?("G") || params.key?("PG") || params.key?("PG-13") || params.key?("R")
+      elsif params["G"] != nil || params["PG"] != nil || params["PG-13"] != nil || params["R"] != nil
         ratings = []
         ["G", "PG", "PG-13", "R"].each {|key| if params.key?(key) ratings << key end}
       else
