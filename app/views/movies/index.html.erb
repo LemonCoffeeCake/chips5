@@ -19,11 +19,11 @@
   <thead>
     <tr>
       <th>
-        <%= link_to "Movie Title", movies_path({"mt": 1}), id: "release_date_header", class: 'hilite text-primary'%>
+        <%= link_to "Movie Title", movies_path(@ratings_to_show_hash, {"mt": 1}), id: "release_date_header", class: 'hilite text-primary'%>
       </th>
       <th>Rating</th>
       <th>
-        <%= link_to "Release Date", movies_path({"rd": 1}), id: "release_date_header", class: 'hilite text-primary'%>
+        <%= link_to "Release Date", movies_path(@ratings_to_show_hash, {"rd": 1}), id: "release_date_header", class: 'hilite text-primary'%>
       </th>
       <th>More Info</th>
     </tr>
