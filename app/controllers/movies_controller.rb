@@ -9,6 +9,9 @@ class MoviesController < ApplicationController
     def index
       if params[:ratings] != nil
         ratings = params[:ratings].keys
+      elsif params["G"] != nil || params["PG"] != nil || params["PG-13"] != nil || params["R"] != nil
+        ratings = []
+        ["G", "PG", "PG-13", "R"].each {|key| if params.key?(key) ratings << key end}
       else
         ratings = Movie.all_ratings
       end
