@@ -23,7 +23,7 @@
       </th>
       <th>Rating</th>
       <th>
-        <%= link_to "Release Date", movies_path(@ratings_to_show_hash, {"rd": 1}), id: "release_date_header", class: 'hilite text-primary'%>
+        <%= link_to "Release Date", movies_path({"rd": 1}.merge(@ratings_to_show_hash)), id: "release_date_header", class: 'hilite text-primary'%>
       </th>
       <th>More Info</th>
     </tr>
