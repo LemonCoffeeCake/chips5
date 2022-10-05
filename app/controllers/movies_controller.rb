@@ -44,6 +44,16 @@ class MoviesController < ApplicationController
       end
       session[:sort] = sortstring
       session[:ratings] = ratings
+      if sortstring == "title"
+        @title_header = true
+        @date_header = false
+      elsif sortstring == "release_date"
+        @title_header = false
+        @date_header = true
+      else
+        @title_header = false
+        @date_header = false
+      end
       @movies = Movie.with_ratings(ratings).order(sortstring)
       @ratings_to_show = ratings
       @ratings_to_show_hash = ratings.to_h {|key| [key, 1]}
