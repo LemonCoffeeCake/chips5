@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
         ratings = Movie.all_ratings
       end
       if params.keys.include?("mt")
-        sortstring = "movie_title"
+        sortstring = "title"
       elsif params.keys.include?("rd")
         sortstring = "release_date"
       else
