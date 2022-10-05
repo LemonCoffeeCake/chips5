@@ -36,7 +36,9 @@ class MoviesController < ApplicationController
         sortstring = params[:sort]
         
       end
-      if params[:home] == nil
+      if params[:home] == nil && !(params[:ratings] != nil ||
+        params[:G] != nil || params[:PG] != nil || params[:R] != nil || params["PG-13"] != nil ||
+        params.key?("mt") || params.key?("rd") || params[:sort] != nil)
         ratings = session[:ratings]
         sortstring = session[:sort]
       end
