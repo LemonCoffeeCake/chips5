@@ -9,8 +9,17 @@ class MoviesController < ApplicationController
     def index
       if params[:ratings] != nil
         ratings = params[:ratings].keys
-      elsif params[:G] != nil
-        ratings = ["G"]
+      elsif params[:G] != nil || params[:PG] != nil || params[:R] != nil
+        ratings = []
+        if params[:G] != nil
+          ratings << "G"
+        end
+        if params[:PG] != nil
+          ratings << "PG"
+        end
+        if params[:R] != nil
+          ratings << "R"
+        end
       else
         ratings = Movie.all_ratings
       end
