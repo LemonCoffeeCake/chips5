@@ -10,6 +10,7 @@ class MoviesController < ApplicationController
       if params[:home] == nil
         ratings = session[:ratings]
         sortstring = session[:sort]
+      end
       if params[:ratings] != nil
         ratings = params[:ratings].keys
       elsif params[:G] != nil || params[:PG] != nil || params[:R] != nil || params["PG-13"] != nil
