@@ -171,3 +171,25 @@ Started GET "/movies.G=1&PG-13=1&PG=1&R=1?mt=1" for 50.206.59.110 at 2022-10-05 
 Cannot render console from 50.206.59.110! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
 Processing by MoviesController#index as 
   Parameters: {"mt"=>"1"}
+
+
+Started GET "/" for 50.206.59.110 at 2022-10-05 03:10:27 +0000
+Cannot render console from 50.206.59.110! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+
+
+Started GET "/" for 50.206.59.110 at 2022-10-05 03:11:22 +0000
+Cannot render console from 50.206.59.110! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R')
+  Rendered movies/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 224ms (Views: 214.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies?G=1&PG-13=1&PG=1&R=1&mt=1" for 50.206.59.110 at 2022-10-05 03:11:36 +0000
+Cannot render console from 50.206.59.110! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MoviesController#index as HTML
+  Parameters: {"G"=>"1", "PG-13"=>"1", "PG"=>"1", "R"=>"1", "mt"=>"1"}

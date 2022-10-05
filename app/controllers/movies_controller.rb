@@ -7,8 +7,12 @@ class MoviesController < ApplicationController
     end
   
     def index
+      debugger
       if params[:ratings] != nil
         ratings = params[:ratings].keys
+      elsif params.key?("G") || params.key?("PG") || params.key?("PG-13") || params.key?("R")
+        ratings = []
+        ["G", "PG", "PG-13", "R"].each {|key| if params.key?(key) ratings << key end}
       else
         ratings = Movie.all_ratings
       end
