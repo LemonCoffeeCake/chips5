@@ -31,13 +31,9 @@ class MoviesController < ApplicationController
       elsif params.key?("rd")
         sortstring = "release_date"
       else
-        sortstring = nil
+        sortstring = ""
       end
-      if sortstring != nil
-        @movies = Movie.with_ratings(ratings).order(sortstring)
-      else
-        @movies = Movie.with_ratings(ratings)
-      end
+      @movies = Movie.with_ratings(ratings).order(sortstring)
       @ratings_to_show = ratings
       @ratings_to_show_hash = ratings.to_h {|key| [key, 1]}
       @all_ratings = Movie.all_ratings
