@@ -31,7 +31,7 @@ class MoviesController < ApplicationController
       elsif params.key?("rd")
         sortstring = "release_date"
       else
-        sortstring = ""
+        sortstring = "id"
       end
       @movies = Movie.with_ratings(ratings).order(sortstring)
       @ratings_to_show = ratings
