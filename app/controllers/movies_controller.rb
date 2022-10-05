@@ -12,7 +12,18 @@ class MoviesController < ApplicationController
       else
         ratings = Movie.all_ratings
       end
-      @movies = Movie.with_ratings(ratings)
+      if params.keys.include?("mt")
+        sortstring = "movie_title"
+      elsif params.keys.include?("rd")
+        sortstring = "release_date"
+      else
+        sortstring = nil
+      end
+      if sortstring != nil
+        @movies = Movie.with_ratings(ratings).order(sortstring)
+      else
+        @movies = Movie.with_ratings(ratings)
+      end
       @ratings_to_show = ratings
       @all_ratings = Movie.all_ratings
     end
