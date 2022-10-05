@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
     end
   
     def index
+      debugger
       if params[:ratings] != nil
         ratings = params[:ratings].keys
       else
