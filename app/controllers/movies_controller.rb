@@ -7,10 +7,6 @@ class MoviesController < ApplicationController
     end
   
     def index
-      if params[:home] == nil
-        ratings = session[:ratings]
-        sortstring = session[:sort]
-      end
       if params[:ratings] != nil
         ratings = params[:ratings].keys
       elsif params[:G] != nil || params[:PG] != nil || params[:R] != nil || params["PG-13"] != nil
@@ -38,8 +34,13 @@ class MoviesController < ApplicationController
         session[:sort] = "release_date"
       else
         sortstring = params[:sort]
-        session[:sort] = params[:sort]
+        
       end
+      if params[:home] == nil
+        ratings = session[:ratings]
+        sortstring = session[:sort]
+      end
+      session[:sort] = sortstring
       session[:ratings] = ratings
       @movies = Movie.with_ratings(ratings).order(sortstring)
       @ratings_to_show = ratings
