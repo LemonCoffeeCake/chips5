@@ -7,7 +7,6 @@ class MoviesController < ApplicationController
     end
   
     def index
-      debugger
       if params[:ratings] != nil
         ratings = params[:ratings].keys
       elsif params["G"] != nil || params["PG"] != nil || params["PG-13"] != nil || params["R"] != nil
