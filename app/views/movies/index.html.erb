@@ -22,11 +22,11 @@
     <tr>
       <% if @title_header %>
       <th class="hilite bg-warning">
-        <%= link_to "Movie Title", movies_path({"mt": 1}.merge(@ratings_to_show_hash).merge({"home": 1})), id: "release_date_header"%>
+        <%= link_to "Movie Title", movies_path({"mt": 1}.merge(@ratings_to_show_hash).merge({"home": 1})), id: "title_header"%>
       </th>
       <% else %>
       <th>
-        <%= link_to "Movie Title", movies_path({"mt": 1}.merge(@ratings_to_show_hash).merge({"home": 1})), id: "release_date_header"%>
+        <%= link_to "Movie Title", movies_path({"mt": 1}.merge(@ratings_to_show_hash).merge({"home": 1})), id: "title_header"%>
       </th>
       <% end %>
       <th>Rating</th>
